@@ -1,30 +1,55 @@
-import React, {useContext} from "react";
-import {Context} from "../store/appContext"
-import {Link} from  "react-router-dom";
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 const Vehicles = () => {
-    const {actions, store} = useContext(Context)
-    return( 
-        <div className="container p-3">
-        <div className="row">
+  const { actions, store } = useContext(Context);
+  return (
+    <div className="container p-3">
+      <div className="row">
         <h2>Vehicles</h2>
         <div className="col-12">
-            <div className="overflow-auto" style={{ width: "100%", whiteSpace: "nowrap" }}>
+          <div
+            className="overflow-auto"
+            style={{ width: "100%", whiteSpace: "nowrap" }}
+          >
             <div className="d-flex">
-                {store.vehicles.map((vehicles, index) => {
+              {store.vehicles.map((vehicles, index) => {
                 return (
-                    <div className="card mx-3" style={{ minWidth: "250px", maxWidth: "600px" }} key={index}>
-                    <img src={"https://starwars-visualguide.com/assets/img/vehicles/" + (index+1) + ".jpg"} className="card-img-top" style={{ height: "325px", objectFit: "cover" }} />
+                  <div
+                    className="card mx-3"
+                    style={{ minWidth: "250px", maxWidth: "600px" }}
+                    key={index}
+                  >
+                    <img
+                      src={
+                        "https://starwars-visualguide.com/assets/img/vehicles/" +
+                        (index + 4) +
+                        ".jpg"
+                      }
+                      className="card-img-top"
+                      style={{ height: "325px", objectFit: "cover" }}
+                    />
                     <div className="card-body">
-                        <h5 className="card-title" style={{ overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis" }}>{vehicles.name}</h5>
+                      <h5
+                        className="card-title"
+                        style={{
+                          overflow: "hidden",
+                          whiteSpace: "nowrap",
+                          textOverflow: "ellipsis",
+                        }}
+                      >
+                        {vehicles.name}
+                      </h5>
                     </div>
-                    </div>
+                    <button type="button" class="btn btn-light text-primary">Light</button>
+                  </div>
                 );
-                })}
+              })}
             </div>
-            </div>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
   );
 };

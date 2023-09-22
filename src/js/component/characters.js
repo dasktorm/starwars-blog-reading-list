@@ -18,6 +18,7 @@ const Characters = () => {
                     <div className="card-body">
                         <h5 className="card-title" style={{ overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis" }}>{people.name}</h5>
                     </div>
+                    <Link type="button" className="btn btn-light" to={`/character/${people.uid}`}>Light</Link>
                     </div>
                 );
                 })}

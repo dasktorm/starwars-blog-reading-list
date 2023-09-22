@@ -3,11 +3,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 	characters:[],
 	planets:[],
-	vehicles:[]
+	vehicles:[],
+	charactersDetails:[],
 		},
 		actions: {
 			fetchCharacters:() => {
-				fetch("https://www.swapi.tech/api/people", {method: "GET"})
+				fetch("https://www.swapi.tech/api/people/", {method: "GET"})
 				.then((response) => response.json())
 				.then((response) => {
 					console.log(response)
@@ -15,7 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				})
 			},
 			fetchPlanets:() => {
-				fetch("https://www.swapi.tech/api/planets", {method: "GET"})
+				fetch("https://www.swapi.tech/api/planets/", {method: "GET"})
 				.then((response) => response.json())
 				.then((response) => {
 					console.log(response)
@@ -24,14 +25,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			
 			fetchVehicles:() => {
-				fetch("https://www.swapi.tech/api/vehicles", {method: "GET"})
+				fetch("https://www.swapi.tech/api/vehicles/", {method: "GET"})
 				.then((response) => response.json())
 				.then((response) => {
 					console.log(response)
 					setStore({vehicles:response.results})
 				}) 
-			}
-		}
+			},
+
+			getCharacterDetails:(id) => {
+				fetch("https://www.swapi.tech/api/people/" + id, {method: "GET"})
+				.then((response) => response.json())
+				.then((response) => {
+					console.log(response)
+					setStore({charactersDetails: response.result.properties})
+				})		
+			},
+	
+		}	
 	};
 };
 

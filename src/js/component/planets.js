@@ -18,6 +18,7 @@ const Planets = () => {
                     <div className="card-body">
                         <h5 className="card-title" style={{ overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis" }}>{planets.name}</h5>
                     </div>
+                    <button type="button" class="btn btn-light">Light</button>
                     </div>
                 );
                 })}
