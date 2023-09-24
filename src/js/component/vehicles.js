@@ -42,7 +42,7 @@ const Vehicles = () => {
                         {vehicles.name}
                       </h5>
                     </div>
-                    <button type="button" class="btn btn-light text-primary">Light</button>
+                    <Link type="button" className="btn btn-light" to={`/vehicles/${vehicles.uid}`}>Light</Link>
                   </div>
                 );
               })}
