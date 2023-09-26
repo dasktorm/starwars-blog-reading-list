@@ -18,9 +18,7 @@ const Vehicles = () => {
                 return (
                   <div
                     className="card mx-3"
-                    style={{ minWidth: "250px", maxWidth: "600px" }}
-                    key={index}
-                  >
+                    style={{ minWidth: "400px", maxWidth: "200px" }} key={index}>
                     <img
                       src={
                         "https://starwars-visualguide.com/assets/img/vehicles/" +
@@ -28,7 +26,7 @@ const Vehicles = () => {
                         ".jpg"
                       }
                       className="card-img-top"
-                      style={{ height: "325px", objectFit: "cover" }}
+                      style={{ height: "200px", objectFit: "cover" }}
                     />
                     <div className="card-body">
                       <h5

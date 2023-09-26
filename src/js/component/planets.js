@@ -13,8 +13,8 @@ const Planets = () => {
             <div className="d-flex">
                 {store.planets.map((planets, index) => {
                 return (
-                    <div className="card mx-3" style={{ minWidth: "250px", maxWidth: "600px" }} key={index}>
-                    <img src={"https://starwars-visualguide.com/assets/img/planets/" + (index+1) + ".jpg"} className="card-img-top" style={{ height: "325px", objectFit: "cover" }} />
+                    <div className="card mx-3" style={{ minWidth: "400px", maxWidth: "200px" }} key={index}>
+                    <img src={"https://starwars-visualguide.com/assets/img/planets/" + (index+1) + ".jpg"} className="card-img-top" style={{ height: "200px", objectFit: "cover" }} />
                     <div className="card-body">
                         <h5 className="card-title" style={{ overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis" }}>{planets.name}</h5>
                     </div>
