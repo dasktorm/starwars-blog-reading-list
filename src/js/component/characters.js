@@ -8,6 +8,7 @@ const Characters = () => {
     <div className="container p-3">
       <div className="row">
         <h2>Characters</h2>
+        
         <div className="col-12">
           <div
             className="overflow-auto"
@@ -42,13 +43,20 @@ const Characters = () => {
                         {people.name}
                       </h5>
                     </div>
-                    <Link
-                      type="button"
-                      className="btn btn-light"
-                      to={`/character/${people.uid}`}
-                    >
-                      Light
-                    </Link>
+
+                    <div className="d-flex flex-row justify-content-evenly p-2">
+                      <Link
+                        type="button"
+                        className="btn btn-outline-secondary w-50"
+                        to={`/character/${people.uid}`}
+                      >
+                        Details
+                      </Link>
+
+                      <button type="button" className="btn btn-outline-primary">
+                       Favorite
+                      </button>
+                    </div>
                   </div>
                 );
               })}

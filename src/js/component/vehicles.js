@@ -18,7 +18,9 @@ const Vehicles = () => {
                 return (
                   <div
                     className="card mx-3"
-                    style={{ minWidth: "400px", maxWidth: "200px" }} key={index}>
+                    style={{ minWidth: "400px", maxWidth: "200px" }}
+                    key={index}
+                  >
                     <img
                       src={
                         "https://starwars-visualguide.com/assets/img/vehicles/" +
@@ -39,8 +41,22 @@ const Vehicles = () => {
                       >
                         {vehicles.name}
                       </h5>
+                      <div className="d-flex flex-row justify-content-evenly p-2">
+                        <Link
+                          type="button"
+                          className="btn btn-outline-secondary w-50"
+                          to={`/vehicles/${vehicles.uid}`}
+                        >
+                          Light
+                        </Link>
+                        <button
+                          type="button"
+                          className="btn btn-outline-primary"
+                        >
+                          Favorite
+                        </button>
+                      </div>
                     </div>
-                    <Link type="button" className="btn btn-light" to={`/vehicles/${vehicles.uid}`}>Light</Link>
                   </div>
                 );
               })}
