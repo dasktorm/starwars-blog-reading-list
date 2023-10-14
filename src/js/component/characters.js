@@ -29,7 +29,7 @@ const Characters = () => {
                         ".jpg"
                       }
                       className="card-img-top"
-                      style={{ height: "200px", objectFit: "cover" }}
+                      style={{ height: "400px", objectFit: "cover" }}
                     />
                     <div className="card-body">
                       <h5
@@ -53,7 +53,7 @@ const Characters = () => {
                         Details
                       </Link>
 
-                      <button type="button" className="btn btn-outline-primary">
+                      <button type="button" className="btn btn-outline-primary" onClick={ () => actions.addFavorite(people)}>
                        Favorite
                       </button>
                     </div>

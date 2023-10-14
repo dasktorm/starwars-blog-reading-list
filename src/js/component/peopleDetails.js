@@ -8,6 +8,7 @@ const PeopleDetails = () => {
   const { store, actions } = useContext(Context);
   useEffect(() => {
     actions.getCharacterDetails(params.id);
+    console.log(store.charactersDetails);
   }, []);
   return (
     <div>
@@ -33,7 +34,7 @@ const PeopleDetails = () => {
           </div>
           <div className="col-md-4 mb-0">
             <h2>Description:</h2>
-            <p>Insert a description here</p>
+            <p>{store.charactersDetails.description}</p>
           </div>
         </div>
       </div>
