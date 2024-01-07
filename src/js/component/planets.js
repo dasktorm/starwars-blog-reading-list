@@ -8,6 +8,7 @@ const Planets = () => {
     <div className="container p-3">
       <div className="row">
         <h2>Planets</h2>
+        
         <div className="col-12">
           <div
             className="overflow-auto"
@@ -28,8 +29,9 @@ const Planets = () => {
                         ".jpg"
                       }
                       className="card-img-top"
-                      style={{ height: "200px", objectFit: "cover" }}
+                      style={{  height: "400px", objectFit: "cover" }}
                     />
+
                     <div className="card-body">
                       <h5
                         className="card-title"
@@ -48,9 +50,9 @@ const Planets = () => {
                         Details
                         </Link>
 
-                        <button type="button" className="btn btn-outline-primary">
-                            Favorite
-                        </button>
+                        <button type="button" className="btn btn-outline-primary" onClick={ () => actions.addFavorite(planets)}>
+                       Favorite
+                      </button>
                     </div>
                   </div>
                 );

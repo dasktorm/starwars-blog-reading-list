@@ -8,6 +8,7 @@ const Vehicles = () => {
     <div className="container p-3">
       <div className="row">
         <h2>Vehicles</h2>
+
         <div className="col-12">
           <div
             className="overflow-auto"
@@ -28,8 +29,9 @@ const Vehicles = () => {
                         ".jpg"
                       }
                       className="card-img-top"
-                      style={{ height: "200px", objectFit: "cover" }}
+                      style={{ height: "400px", objectFit: "cover" }}
                     />
+                    
                     <div className="card-body">
                       <h5
                         className="card-title"
@@ -41,23 +43,22 @@ const Vehicles = () => {
                       >
                         {vehicles.name}
                       </h5>
+                    </div>
+
                       <div className="d-flex flex-row justify-content-evenly p-2">
                         <Link
                           type="button"
                           className="btn btn-outline-secondary w-50"
                           to={`/vehicles/${vehicles.uid}`}
                         >
-                          Light
+                          Details
                         </Link>
-                        <button
-                          type="button"
-                          className="btn btn-outline-primary"
-                        >
-                          Favorite
-                        </button>
+                        
+                        <button type="button" className="btn btn-outline-primary" onClick={ () => actions.addFavorite(vehicles)}>
+                       Favorite
+                      </button>
                       </div>
                     </div>
-                  </div>
                 );
               })}
             </div>

@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams, userParams } from "react-router";
 import { Context } from "../store/appContext";
-import { useNavigate } from "react-router-dom";
 
 const PeopleDetails = () => {
   const params = useParams();

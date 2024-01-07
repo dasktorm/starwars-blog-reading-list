@@ -31,6 +31,7 @@ const Characters = () => {
                       className="card-img-top"
                       style={{ height: "400px", objectFit: "cover" }}
                     />
+                    
                     <div className="card-body">
                       <h5
                         className="card-title"

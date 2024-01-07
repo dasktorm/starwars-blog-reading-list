@@ -7,7 +7,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       charactersDetails: [],
       vehicleDetails: [],
       planetsDetails: [],
-	  favorites: [],
+      favorites: [],
     },
     actions: {
       fetchCharacters: () => {
@@ -40,7 +40,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         fetch("https://www.swapi.tech/api/people/" + id, { method: "GET" })
           .then((response) => response.json())
           .then((response) => {
-            console.log("Dámaso", response);
+            console.log(response);
             setStore({
               charactersDetails: {
                 ...response.result.properties,
@@ -52,30 +52,40 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       getVehicleDetails: (id) => {
         fetch("https://www.swapi.tech/api/vehicles/" + id, { method: "GET" })
-          .then((response) => response.json())
-          .then((response) => {
-            console.log(response);
-            setStore({ vehicleDetails: response.result.properties });
+        .then((response) => response.json())
+        .then((response) => {
+          console.log(response);
+          setStore({
+            vehicleDetails: {
+              ...response.result.properties,
+              description: response.result.description,
+            },
           });
-      },
+        });
+    },
 
       getPlanetsDetails: (id) => {
         fetch("https://www.swapi.tech/api/planets/" + id, { method: "GET" })
           .then((response) => response.json())
           .then((response) => {
             console.log(response);
-            setStore({ planetsDetails: response.result.properties });
+            setStore({
+              planetsDetails: {
+                ...response.result.properties,
+                description: response.result.description,
+              },
+            });
           });
       },
 
-	  addFavorite:(newFavorite) => {
-		const store = getStore();
-		setStore({
-			...store,
-			favorites: [...store.favorites, newFavorite]
-		})
-		console.log(getStore());
-	  }, 
+      addFavorite: (newFavorite) => {
+        const store = getStore();
+        setStore({
+          ...store,
+          favorites: [...store.favorites, newFavorite],
+        });
+        console.log(getStore());
+      },
     },
   };
 };
